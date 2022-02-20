@@ -1,0 +1,15 @@
+-- Using MySQL
+-- The idea is:
+-- Select the second highest score by choosing the highest score less than the 
+SELECT
+  MAX(Score) as "SecondHighestScore"
+FROM
+  Performance
+WHERE
+  Score < (
+    SELECT
+      MAX(Score)
+    FROM
+      Performance
+  );
+
