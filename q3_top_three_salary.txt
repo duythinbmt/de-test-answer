@@ -1,3 +1,7 @@
+-- Using MySQL
+-- First of all, I joined two table
+-- The TOP three unique salary means no more than three salaries are greater than it
+
 SELECT
   d.name AS "Department",
   e.name AS "Employee Name",

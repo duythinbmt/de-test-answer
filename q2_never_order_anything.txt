@@ -1,5 +1,5 @@
 -- Using MySQL
---
+-- Left join, If customers have never ordered anything, no order information they have. So the customerID in Orders table will be null
 
 SELECT
   c.name as "Not yet order"

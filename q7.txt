@@ -1,7 +1,18 @@
 Each link, I store it in a tuple: (string, float) = (link, score)
 And the list of link are stored in an array: webs = [("link1", score1), ("link2", score2), ("link3", score3),...]
 
-When the size of webs reaches 1000, I will sort the list with score1 values, using '''list_of_tuples.sort(key=lambda x:x[1], reverse=True)'''
+Sol 1:
+
+When the size of webs reaches 1000, I will sort the list with score1 values, using '''webs.sort(key=lambda x:x[1], reverse=True)'''
 When the 1001st web link is added, I run the sort function and remove the last web link. So I can get the 1000 web link with high scores.
 
 Time Complexity for sort function: O(NlogN)
+
+
+Sol 2:
+When the 1001st web link is added, I find the tuples which has the smallest score: smallest_score =  ```min(webs, key=lambda x:x[1]``` # O(N)
+Then I remove the smallest in the list: webs.remove(smallest_score) # O(N)
+Time Complexity: O(N)
+
+
+=> Sol 2 is better
